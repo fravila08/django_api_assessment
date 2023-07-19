@@ -11,6 +11,8 @@ acquire the token provided in the response. Then it will set the token under the
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
 to authenticate the user and delete this users Token.
 
+The client will then send a GET request to the endpoint of name "an_item" with the
+number 10 being passed as the item_id.
 This endpoint must return the following Response status code of 200
 """
 

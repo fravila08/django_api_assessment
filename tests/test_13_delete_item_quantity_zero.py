@@ -11,6 +11,15 @@ acquire the token provided in the response. Then it will set the token under the
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
 to authenticate the user and delete this users Token.
 
+The client will send a series of POST requests to the endpoint with the name of "an_item" to build
+the clients cart. 
+
+The client will send a PUT request to the endpoint with the name of "cart_item_quantity"
+and pass in "sub" as the method and the number 19 as the cart_item_id to decrement the quantity 
+of the Cart_item with the ID of 19 to 0 which will trigger the Cart_Items deletion. 
+
+The client will send a GET request to the endpoint with the name of "cart" to see their updated cart items 
+and price.
 This endpoint must return the following Response status code of 200
 """
 answer = {
@@ -53,10 +62,10 @@ in order to pass the test. Pay attention to order and formatting of your data.
 """
 
 
-class Test_increase_cart_item(APITestCase):
+class Test_delete_item_quantity_zero(APITestCase):
     fixtures = ["items.json"]
 
-    def test_011_increase_cart_item(self):
+    def test_013_delete_item_quantity_zero(self):
         client = Client()
         sign_up_response = client.post(
             reverse("signup"),

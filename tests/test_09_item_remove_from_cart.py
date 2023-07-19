@@ -12,6 +12,9 @@ acquire the token provided in the response. Then it will set the token under the
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
 to authenticate the user and delete this users Token.
 
+The client will then send a DELETE request to the endpoint with the name of "an_item"
+and pass in the number 10 as the item_id. This will delete any Cart_Item that has a relationship
+with the Item with ID of 10.
 This endpoint must return the following Response status code of 204
 in order to pass the test. Pay attention to order and formatting of your data.
 """

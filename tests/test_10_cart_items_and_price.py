@@ -11,6 +11,11 @@ acquire the token provided in the response. Then it will set the token under the
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
 to authenticate the user and delete this users Token.
 
+The client will then send a mix of POST and DELETE requests to the endpoint of "an_item" and 
+to build the clients cart. 
+The client will send a GET request to the endpoint with the name of "cart" and receive a 
+dictionary with the keys of cart_items(holds a list of cart_items) and total_price(Remember to multiply item price by
+item quantity). 
 This endpoint must return the following Response status code of 200
 """
 answer = {

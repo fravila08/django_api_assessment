@@ -10,7 +10,8 @@ from rest_framework.authtoken.models import Token
 This test will send a post request to signup to first create a new user and 
 acquire the token provided in the response. Then it will set the token under the 
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
-to authenticate the user and delete this users Token.
+to authenticate the user and delete this users Token. Then the user will sent a POST request
+to logout to force the deletion of their Token.
 
 This endpoint must return the following Response status code of 204 
 in order to pass this test

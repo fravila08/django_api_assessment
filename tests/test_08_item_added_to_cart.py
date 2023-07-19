@@ -11,6 +11,9 @@ acquire the token provided in the response. Then it will set the token under the
 AUTHORIZATION HEADER of the next request where the APIView will utilize TokenAuthentication
 to authenticate the user and delete this users Token.
 
+The Client will then send a POST request to the endpoint with the name of "an_item"
+and pass in the number 10 as the item_id. This will create a Cart Item with a OneToOne
+relationship to the item and a ManyToOne relationship to the clients cart.
 This endpoint must return the following Response status code of 201
 """
 
