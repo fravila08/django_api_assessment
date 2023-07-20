@@ -23,8 +23,7 @@ jobs:
         echo waiting...
         sleep 6
         sudo service postgresql start
-        sudo su - postgres -c "psql --echo-all -U postgres -d postgres --command \"create user runner;\""
-        sudo su - postgres -c "psql --echo-all -U postgres -d postgres --command \"alter user runner with password 'password';\""
+        sudo su - postgres -c "psql --echo-all -U postgres -d postgres --command \"CREATE USER runner WITH SUPERUSER CREATEDB CREATEROLE LOGIN PASSWORD '';\""
         sudo su - postgres -c "psql --echo-all -U postgres -d postgres --command \"create database ecom_db;\""
         echo finished pg commands...
         sudo service postgresql restart
