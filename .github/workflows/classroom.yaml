@@ -35,4 +35,7 @@ jobs:
     - name: Set up Django 
       run: |
         pip install -r requirements.txt
-  
+        pip list
+    - name: Run the test suite
+      run: python manage.py test tests
+ 
