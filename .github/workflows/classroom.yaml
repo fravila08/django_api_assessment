@@ -32,9 +32,7 @@ jobs:
         sudo apt install python3
         sudo apt-get install python3-pip
     - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        pip list
+      run: pip install -r requirements.txt
     - name: Autograder
       uses: education/autograding@v1
       continue-on-error: true
