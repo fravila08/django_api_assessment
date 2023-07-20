@@ -35,8 +35,6 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip list
-    - name: Run the test suite
-      run: python manage.py test tests
     - name: Autograder
       uses: education/autograding@v1
       continue-on-error: true
