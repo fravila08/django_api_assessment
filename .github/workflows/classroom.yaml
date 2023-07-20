@@ -28,4 +28,11 @@ jobs:
         sudo su - postgres -c "psql --echo-all -U postgres -d postgres --command \"create database ecom_db;\""
         echo finished pg commands...
         sudo service postgresql restart
+    - name: Set up Python
+      run: |
+        sudo apt install python3
+        sudo apt-get install python3-pip
+    - name: Set up Django 
+      run: |
+        pip install -r requirements.txt
   
