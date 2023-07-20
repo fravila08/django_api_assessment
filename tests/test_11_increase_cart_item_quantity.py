@@ -92,7 +92,7 @@ class Test_increase_cart_item(APITestCase):
         self.client.put(reverse("cart_item_quantity", args=["add", 5]))
         self.client.put(reverse("cart_item_quantity", args=["add", 5]))
         response = self.client.get(reverse("cart"))
-        print(response.content)
+        # print(response.content)
         with self.subTest():
             self.assertEquals(response.status_code, 200)
         self.assertEquals(json.loads(response.content), answer)

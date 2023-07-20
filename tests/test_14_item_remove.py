@@ -78,7 +78,7 @@ class Test_increase_cart_item(APITestCase):
         self.client.post(reverse("an_item", args=[5]))
         self.client.delete(reverse("delete_item", args=[2]))
         response = self.client.get(reverse("cart"))
-        print(response.content)
+        # print(response.content)
         with self.subTest():
             self.assertEquals(response.status_code, 200)
         self.assertEquals(json.loads(response.content), answer)
